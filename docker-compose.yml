@@ -1,6 +1,6 @@
 services:
   wholy-backend:
-    build: ./my-medusa-store
+    build: ./wholy-backend
     ports:
       - 7001:7001
       - 9000:9000
