@@ -1,0 +1,46 @@
+@import "../../../../styles/breakpoints.scss";
+@import "../../../../styles/colors.scss";
+
+.price_details_area {
+    font-family: "Cabinet Grotesk";
+
+    .heading {
+        font-weight: bold;
+    }
+
+    .detail_container {
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+
+        &:first-child {
+            margin-top: 0px;
+        }
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            margin-top: 16px;
+        }
+
+        .value {
+            font-weight: bold;
+        }
+    }
+
+    .coupon_discount_detail_container {
+        .left_area {
+            display: flex;
+            align-items: center;
+
+            .remove_applied_coupon_code_button {
+                margin-left: 16px;
+                color: red;
+            }
+        }
+
+        .coupon_code {
+            margin-left: 32px;
+            font-family: "Cabinet Grotesk";
+            font-weight: bold;
+        }
+    }
+}

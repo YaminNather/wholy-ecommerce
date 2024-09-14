@@ -1,0 +1,1 @@
+export type NavBarPage = "home" | "shop" | "ourStory" | "products" | "contact" 

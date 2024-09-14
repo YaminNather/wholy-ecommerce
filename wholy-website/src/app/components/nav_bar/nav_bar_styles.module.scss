@@ -1,0 +1,148 @@
+@import "./nav_bar.scss";
+@import "../../styles/colors.scss";
+@import "../../styles/breakpoints.scss";
+
+.nav_bar {
+    position: fixed;
+    display: flex;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    height: $nav_bar_height;
+    width: 100%;
+    padding: 0px 128px;
+
+    @include within_breakpoint($extra_small_breakpoint) {
+        padding: 16px;
+        height: $nav_bar_height_mobile;
+    }
+
+    .detailed_section {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 1.0;
+        transition: opacity 500ms;
+
+        .company_logo {
+            width: auto;
+            height: 90px;
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                height: 100%;
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            
+            @include within_breakpoint($extra_small_breakpoint) {
+                display: none;
+            }
+
+            .nav_item {
+                margin-left: 48px;
+                display: inline-flex;
+            }
+
+            .nav_link {
+                font-size: 24px;
+                color: #fcf0ce;
+
+                &:hover {
+                    color: $domain_color_variant;
+                }
+            }
+
+            .currently_open_page_link {
+                color: $domain_color_variant;
+                font-weight: bold;
+            }
+
+            a:first-child {
+                margin-left: 0px;
+            }
+
+            .background_icon_button {
+                border-radius: 3000px;
+                background-color: #fcf0ce;
+                padding: 8px;
+
+                span {
+                    color: $domain_color;
+                }
+            }
+
+            .account_button {
+                span {
+                    width: 56px;
+                    height: 56px;
+                    color: #fcf0ce;
+                    font-size: 56px;
+                }
+            }
+        }
+    }    
+
+    .open_nav_menu_button {
+        position: absolute;
+        display: none;
+        right: 128px;
+        top: 50%;
+        transform: translate(0px, -50%);
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            display: unset;
+            right: 32px;
+        }
+
+        span {
+            color: $text_color;
+            font-size: 40px;
+        }
+    }
+}
+
+.nav_bar_light_theme {
+    .detailed_section {
+        nav {
+            .nav_item {
+                color: $text_color;
+
+                &:hover {
+                    color: $domain_color;
+                }
+            }
+
+            .currently_open_page_link {
+                color: $domain_color;
+            }
+
+            .account_button {
+                span {
+                    color: #0e6b41;
+                }
+            }
+
+            .background_icon_button {
+                background-color: $domain_color;
+
+                span {
+                    color: $text_color_dark_theme;
+                }
+            }
+        }
+    }
+}
+
+.nav_bar_compact {
+    .detailed_section {
+        opacity: 0.0;
+    }
+
+    .open_nav_menu_button {
+        display: unset;
+    }
+}

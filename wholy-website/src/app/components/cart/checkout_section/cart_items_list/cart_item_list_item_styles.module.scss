@@ -1,0 +1,42 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/breakpoints.scss";
+
+.cart_item_list_item {    
+    display: flex;
+    align-items: center;
+
+    .area {
+        margin-left: 32px;
+
+        &:first-child {
+            margin-left: 0px;
+        }
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            margin-left: 16px;
+        }
+    }
+
+    .product_image {
+        width: 128px;
+        height: auto;
+    }
+
+    .titles_area {
+        flex-grow: 1;
+        
+        .product_name {            
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .quantity_stepper {
+            margin-top: 8px;
+        }
+
+        .price {
+            margin-top: 8px;
+            font-weight: bold;
+        }
+    }
+}

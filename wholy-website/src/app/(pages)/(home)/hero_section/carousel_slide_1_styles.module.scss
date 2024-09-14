@@ -1,0 +1,208 @@
+@import "../../../components/nav_bar/nav_bar.scss";
+@import "../../../styles/colors.scss";
+@import "../../../styles/breakpoints.scss";
+
+.carousel_slide_1 {
+    position: relative;
+    height: 100%;
+    padding-top: $nav_bar_height;
+
+    @include within_breakpoint($extra_small_breakpoint) {
+        padding-top: $nav_bar_height_mobile;
+    }
+    
+    .bottom_left_strawberry_0 {
+        left: 0px;
+        bottom: 20%;
+        width: auto;
+        height: 10vw;
+
+        @include within_breakpoint($extra_small_breakpoint) {            
+            bottom: unset;
+            top: 20vw;
+        }
+    }
+    
+    .bottom_left_strawberry_1 {
+        left: 13%;
+        bottom: 20%;
+        width: auto;
+        height: 15%;
+        transform: rotate(-45deg);
+        
+        @include within_breakpoint($extra_small_breakpoint) {            
+            bottom: unset;
+            top: 25vw;
+        }
+    }
+
+    .strawberry_0 {
+        left: 7%;
+        bottom: -3%;
+        width: auto;
+        height: 18vw;
+        transform: rotate(-20deg);
+    }
+    
+    .fig_0 {
+        left: 20%;
+        bottom: 0%;
+        width: auto;
+        height: 10vw;
+        transform: rotate(0deg);
+    }
+    
+    .fig_1 {
+        right: 12%;
+        bottom: 0px;
+        width: auto;
+        height: 6vw;
+        transform: translate(0px, 40%);
+    }
+    
+    .blueberry_0 {
+        right: 15%;
+        bottom: 12%;
+        width: auto;
+        height: 6vw;
+        transform: rotate(0deg);
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            bottom: unset;
+            top: 20vw;
+        }
+    }        
+    
+    .strawberry_1 {
+        right: 10%;
+        bottom: 25%;
+        width: auto;
+        height: 10vw;
+        transform: rotate(-25deg);
+    }
+    
+    .bottom_right_pineapple {
+        right: 0%;
+        bottom: 30%;
+        width: auto;
+        height: 10vw;
+        transform: translate(20%);
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            bottom: unset;
+            top: 30vw;
+        }
+    }
+
+    .plant {
+        right: -5%;
+        bottom: 0px;
+        z-index: -1;
+        width: auto;
+        height: 30vw;
+        transform: translate(0px, 30%) rotate(-20deg);
+    }
+
+    .yellow_curve_0 {
+        left: 0px;
+        bottom: 0px;
+        z-index: -2;
+        width: auto;
+        height: 400px;
+        transform: translate(-10%) scaleX(-1.0);
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            display: none;
+        }
+    }
+    
+    .yellow_curve_1 {
+        right: 0px;
+        bottom: 0px;
+        z-index: -2;
+        width: auto;
+        height: 18vw;
+        
+        @include within_breakpoint($extra_small_breakpoint) {
+            display: none;
+        }
+    }
+
+    .container {
+        margin-top: 32px;
+        display: grid;
+        height: 100%;
+        grid-template-columns: 40fr 60fr;
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            margin-top: unset;
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .left_grid_cell {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                display: none;
+            }
+
+            img, .image {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: bottom;
+            }
+        }
+
+        .right_grid_cell {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                align-items: center;
+            }
+
+            // h1, p {
+            //     max-width: 600px;
+            // }
+    
+            p {
+                margin-top: 80px;
+                max-width: 1000px;
+                font-weight: bold;
+                font-size: 70px;
+                line-height: 130%;
+
+                @media (max-width: 1700px) {
+                    max-width: 800px;
+                    font-weight: bold;
+                    font-size: 55px;
+                }
+                
+                @include within_breakpoint($extra_small_breakpoint) {
+                    margin-top: unset;
+                    font-size: 30px;
+                }
+
+                strong {                    
+                    color: $domain_color_variant;
+                }
+            }
+    
+            button {
+                margin-top: 64px;
+                border-radius: 8px;
+                color: black;
+
+                @include within_breakpoint($extra_small_breakpoint) {
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+}

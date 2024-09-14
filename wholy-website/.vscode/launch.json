@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Launch Server-Side App",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev"
+        },
+        
+        {
+            "name": "Launch Client-Side App",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8000"
+        }
+    ]
+}

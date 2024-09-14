@@ -1,0 +1,446 @@
+@import "colors.scss";
+@import "breakpoints.scss";
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-weight: 100 400;
+  font-style: "normal";
+  font-display: swap;
+  src: url("/fonts/CabinetGrotesk-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  font-weight: 500 900;
+  font-style: "normal";
+  font-display: swap;
+  src: url("/fonts/CabinetGrotesk-Extrabold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Gloria Hallelujah";
+  font-weight: 400;
+  font-style: "normal";
+  font-display: swap;
+  src: url("/fonts/GloriaHallelujah-Regular.woff2") format("woff2");
+}
+
+$font-family: 'Cabinet Grotesk', cursive, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #f7f7f7;
+}
+
+html,
+body {  
+  font-family: $font-family;
+  color: $text-color-dark-theme;
+  font-size: 18px;
+  font-weight: 300;
+  overflow-x: hidden;    
+
+  @include within_breakpoint($small_breakpoint) {
+    text-align: center; 
+  }
+}
+
+.personalized_text {
+  font-family: "Gloria Hallelujah";
+  line-height: 130%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  font-family: $font-family;
+  line-height: 100%;
+}
+
+// h1, h2, h3, h4, h5, h6 {
+//   letter-spacing: 0.1em;
+// }
+
+h1 {
+  // font-size: 55px;
+  font-size: 50px;
+}
+
+h2 {  
+  font-size: 36px;
+  font-weight: bold;
+  
+  @include within_breakpoint($small_breakpoint) {
+    font-size: 30px;
+  }
+}
+
+h5 {
+  font-size: 1.5em;  
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+strong {
+  color: $domain_color;
+}
+
+a {
+  color: $text_color_dark_theme;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 300ms;
+
+  &:hover {
+    color: $domain_color_variant;
+  }
+}
+
+button {
+  min-width: 200px;
+  border-color: transparent;
+  border-radius: 8px;
+  background-color: $primary_color;
+  padding: 16px 16px;
+  font-family: "Cabinet Grotesk";
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: color 300ms;
+
+  &:hover {    
+    color: $domain_color_variant;
+    cursor: pointer;
+  }
+
+  &:disabled, &[disabled] {
+    background-color: grey;
+  }
+
+  &:hover:disabled {
+    color: revert;
+  }
+
+  @include within_breakpoint($extra_small_breakpoint) {
+    min-width: 80px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+input, textarea {
+  margin: 0px;
+  min-height: 48px;
+  outline: none;  
+  border: 2px solid grey;
+  border-radius: 8px;
+  background-color: white;
+  padding-left: 16px;
+  font-family: 'Cabinet Grotesk';
+  font-size: 20px;
+  // font-weight: bold;
+  color: $text_color_dark_theme;
+  transition: background-color 100ms;
+
+  &::placeholder {
+    color: rgba($text_color_dark_theme, 0.5);
+  }
+
+  &:focus {
+    border-color: $domain_color_variant;
+    // background-color: #00000011;
+  }
+
+  &::-webkit-inner-spin-button, &::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+  }
+}
+
+textarea {
+  padding-top: 16px;
+}
+
+[type=radio] {
+  outline: none;
+}
+
+select {
+  outline: none;
+  border: 2px solid grey;
+  border-radius: 8px;
+  height: 48px;
+
+  option {
+    height: 90px;
+    color: white;
+    background-color: $primary_color;
+    
+    &:hover {
+      background-color: white;
+    }
+  }
+}
+
+table {
+  border-collapse: collapse;    
+
+  tr {
+    th, td {
+      border: 1px solid #CCCCCC;
+      padding: 8px 16px;
+    }    
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: 16px;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+}
+
+select {
+  margin: 0px;
+  min-height: 48px;
+  border-bottom: black solid 1px;
+  background-color: transparent;
+  padding-left: 16px;
+  font-family: $font-family;
+  color: $primary_color;
+  font-size: 20px;
+  transition: background-color 100ms;
+
+  &:focus {
+    outline: none;
+    border-color: $primary_color;    
+    background-color: #00000011;
+  }
+}
+
+section {
+  padding: 128px 16px;
+
+  @include within_breakpoint($extra_small_breakpoint) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1320px;
+  // padding-left: 300px;
+  // padding-right: 300px;
+
+
+  @include within_breakpoint($large_breakpoint) {
+    max-width: 960px;
+  }
+  
+
+  @include within_breakpoint($medium_breakpoint) {
+    // padding: 0px 16px;
+    max-width: 700px;
+  }
+  
+  @include within_breakpoint($extra_small_breakpoint) {
+    max-width: 100%;
+  }
+}
+
+.background_image {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+
+.background_prop {
+  position: absolute;
+  z-index: -1;
+}
+
+.tear_effect {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+}
+
+.hidden_blog_link {
+  color: inherit;
+}
+
+.light_theme {
+  color: $text_color;
+
+  input {
+    outline-color: lighten($text_color, 70%);
+    color: $text_color;
+
+    &::placeholder {
+      color: #736868;
+    }
+  }
+
+  a {
+    color: $text_color;
+
+    &:hover {
+      color: $domain_color_variant;
+    }
+  }
+
+  .icon_button {
+    color: $text_color;
+  }
+}
+
+.button_outline {
+  outline: 2px solid $primary_color;
+  background-color: transparent;
+  color: $primary_color;
+}
+
+.button_yellow {
+  background-color: #dd9901 !important;
+  color: $text_color;
+
+  &:hover {
+    color: $domain_color !important;
+  }
+}
+
+.icon_button {
+  $children_dimensions: 32px;
+
+  display: inline-flex;
+  background-color: transparent;
+  border-radius: 10000px;
+  min-width: unset;
+  min-height: unset;
+  padding: unset;  
+  transition: transform 300ms;
+
+  img {
+    width: $children_dimensions;
+    height: $children_dimensions;
+    object-fit: contain;
+  }
+
+  span.material-icons, span.material-symbols-outlined {
+    width: $children_dimensions;
+    height: $children_dimensions;
+    font-size: $children_dimensions;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.input_field_container {
+  text-align: start;
+
+  p {
+    display: inline-flex;
+  }
+
+  input {
+    margin-top: 8px;
+    width: 100%;
+    border-right: none;
+  }
+}
+
+
+.carousel_controls {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  pointer-events: none;
+
+  button {
+      min-width: unset;
+      min-height: unset;
+      width: 80px;
+      height: 100%;
+      border: transparent;
+      border-radius: unset;
+      pointer-events: all;
+
+      span {
+          font-size: 64px;
+      }
+  }
+  
+  $button_gradient_color: rgba(black, 0.1);
+
+  .carousel__back-button {
+      background: linear-gradient(to right, $button_gradient_color, transparent);
+  }
+  
+  .carousel__next-button {
+      background: linear-gradient(to left, $button_gradient_color, transparent);
+  }
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+
+.dark_theme {
+  color: $text_color_dark_theme;
+
+  input, textarea {
+    border-color: $primary_color;
+    color: $primary_color;
+  }
+
+  button {
+    background-color: $primary_color_dark_theme;
+    color: $text_color;
+    
+    &:hover {
+      background-color: white;
+      color: $primary_color_dark_theme;
+    }
+  }  
+
+  // label {
+  //   color: $primary_color_dark_theme;
+  // }
+}

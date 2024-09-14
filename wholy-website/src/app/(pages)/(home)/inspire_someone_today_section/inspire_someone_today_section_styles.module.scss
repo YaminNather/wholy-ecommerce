@@ -1,0 +1,125 @@
+@import "../../../styles/breakpoints.scss";
+
+$page_peel_animation_duration: 1000ms;
+
+.inspire_someone_today_section {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    font-size: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+    // box-shadow: 16px 0px 24px #00000077;
+    transform-origin: 0% 50%;
+            
+    overflow-x: hidden;
+    
+    @include within_breakpoint($small_breakpoint) {
+        height: 60vh;
+        font-size: 40px;
+        // margin-top: $nav_bar_height_extra_small;
+    }
+    
+    @include within_breakpoint($extra_small_breakpoint) {
+        font-size: 24px;
+    }
+    
+    .main_content {
+        width: 100%;
+        height: 100%;
+
+        .container {
+            display: flex;
+            height: 100%;
+            width: 50%;
+            flex-direction: column;
+            justify-content: center;                
+    
+            .bottom_area {
+                display: inline-flex;
+                justify-content: space-between;
+                
+                .changing_text_container {
+                    position: relative;
+                    flex-grow: 1;
+                    text-align: center;
+                    
+                    .changing_text {
+                        position: relative;
+                        display: inline-flex;
+                        font-family: "Cabinet Grotesk";
+                        font-weight: bold;
+                        font-size: 100px;
+                        animation: text_reveal 1500ms forwards;
+
+                        .changing_text_overlay {
+                            display: inline-flex;
+                            position: absolute;
+                            left: -4px;
+                            top: -4px;
+                            width: 100%;
+                            height: 100%;
+                            -webkit-text-stroke: 2px brown;
+                            color: transparent;
+                            z-index: 2;
+                        }
+                    }
+                    
+                    .paint_strokes {
+                        position: absolute;
+                        left: 0px;
+                        bottom: -80px;
+                        width: 100%;
+                        flex-grow: 1;
+                        object-fit: contain;
+        
+                        // @include within_breakpoint($medium_breakpoint) {
+                        //     width: 80%;
+                        //     height: auto;
+                        // }
+                    }
+                }
+            }
+        }
+    
+    }
+    
+    .papers_back {
+        // display: none;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 0px;
+        height: 100%;
+        background-color: white;
+        z-index: 300;
+        animation: papers_back $page_peel_animation_duration forwards;
+    }
+}
+
+@keyframes page_peel {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes papers_back {
+    
+}
+
+@keyframes text_reveal {
+    0% {
+        color: #FFFFFF00;
+    }
+
+    100% {
+        opacity: #FFFFFF;
+    }
+}

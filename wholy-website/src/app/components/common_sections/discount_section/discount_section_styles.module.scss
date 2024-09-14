@@ -1,0 +1,90 @@
+@import "../../../styles/breakpoints.scss";
+@import "../../../styles/colors.scss";
+
+.discount_section {
+    $tear_effect_padding: 128px;
+    $tear_effect_padding_extra_small_breakpoint: 32px;
+
+    position: relative;
+    padding: 128px 16px;
+    padding-bottom: 128px + $tear_effect_padding;
+
+    @include within_breakpoint($extra_small_breakpoint) {
+        padding-top: 32px;
+        padding-bottom: 32px + $tear_effect_padding_extra_small_breakpoint;
+    }
+
+    .fruit {
+        width: 10%;
+        height: auto;
+    }
+
+    .strawberry {
+        right: 20%;
+        bottom: 30%;
+        transform: rotate(-30deg);
+    }
+
+    .blueberry {
+        right: 0px;
+        top: 0px;
+    }
+
+    .pineapple {
+        left: 0%;
+        top: 10%;
+    }
+
+    .fig {
+        left: 10%;
+        bottom: 20%;
+    }
+
+    h1 {
+        color: white;
+        font-weight: unset;
+        font-size: 50px;
+        text-align: center;
+
+        @include within_breakpoint($extra_small_breakpoint) {
+            font-size: revert;
+        }
+
+        strong {
+            color: #1f7855;
+            text-decoration: underline;
+        }
+    }
+
+    .button_container {
+        $button_blue_color: #2f3c77;;
+
+        margin-top: 64px;
+        display: flex;
+        justify-content: center;
+
+        .join_now_button {
+            background-color: $button_blue_color;
+        }
+
+        .follow_us_button {
+            margin-left: 32px;
+            outline-color: $button_blue_color;
+            color: $button_blue_color;
+
+            &:hover {
+                outline-color: $domain_color;
+                color: $domain_color;
+            }
+        }        
+    }
+
+    .tear_effect {
+        left: 0px;
+        bottom: -1px;
+        width: 100%;
+        height: auto;
+        // transform: rotate(180deg) translate(0px, 100%);
+        transform: rotate(180deg);
+    }
+}

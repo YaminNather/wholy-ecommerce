@@ -1,0 +1,60 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/breakpoints.scss";
+
+.textured_background_section {
+    position: relative;
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .fruit {
+        width: 7vw;
+        height: auto;
+    }
+
+    .right_fig {
+        bottom: 0px;
+        right: 0px;
+        transform: translate(50%, 0px);
+    }
+
+    .left_pineapple {
+        left: 0px;
+        bottom: 0px;
+        transform: translate(-10%);
+    }
+
+    .left_strawberry {
+        width: 3vw;
+        height: auto;
+        left: 0px;
+        bottom: 80%;
+        transform: translate(-20%, 0px);
+    }
+
+    .container {
+        width: 1100px;
+        text-align: center;
+
+        .personalized_text {
+            color: $domain_color_variant;
+        }
+
+        h1 {
+            color: $domain_color_variant;
+        }
+
+        p {
+            margin-top: 16px;
+            font-size: 24px;
+            line-height: 150%;
+
+            @include within_breakpoint($extra_small_breakpoint) {
+                font-size: 18px;
+            }
+                   
+            strong {
+                color: $domain_color_variant;
+            }
+        }
+    }
+}
